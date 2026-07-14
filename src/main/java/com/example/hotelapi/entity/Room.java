@@ -12,8 +12,8 @@ public class Room {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "hotel_id", referencedColumnName = "id", nullable = false)
-    private Property hotel;
+    @JoinColumn(name = "property_id", referencedColumnName = "id", nullable = false)
+    private Property property;
 
     @Column(name = "room_type", nullable = false)
     private String roomType;
@@ -29,8 +29,8 @@ public class Room {
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
-    public Property getHotel() { return hotel; }
-    public void setHotel(Property hotel) { this.hotel = hotel; }
+    public Property getProperty() { return property; }
+    public void setProperty(Property property) { this.property = property; }
 
     public String getRoomType() { return roomType; }
     public void setRoomType(String roomType) { this.roomType = roomType; }

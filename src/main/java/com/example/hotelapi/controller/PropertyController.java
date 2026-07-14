@@ -7,24 +7,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/hotels")
+@RequestMapping("/api/properties")
 public class PropertyController {
 
-    private final PropertyRepository hotelRepository;
+    private final PropertyRepository propertyRepository;
 
-    public PropertyController(PropertyRepository hotelRepository) {
-        this.hotelRepository = hotelRepository;
+    public PropertyController(PropertyRepository propertyRepository) {
+        this.propertyRepository = propertyRepository;
     }
 
-    // Bütün otelləri görmək üçün GET sorğusu
     @GetMapping
-    public List<Property> getAllHotels() {
-        return hotelRepository.findAll();
+    public List<Property> getAllProperties() {
+        return propertyRepository.findAll();
     }
 
-    // Sistemə yeni otel əlavə etmək üçün POST sorğusu
     @PostMapping
-    public Property addHotel(@RequestBody Property hotel) {
-        return hotelRepository.save(hotel);
+    public Property addProperty(@RequestBody Property property) {
+        return propertyRepository.save(property);
     }
 }
