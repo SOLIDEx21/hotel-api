@@ -1,30 +1,30 @@
 package com.example.hotelapi.controller;
 
-import com.example.hotelapi.entity.Hotel;
-import com.example.hotelapi.repository.HotelRepository;
+import com.example.hotelapi.entity.Property;
+import com.example.hotelapi.repository.PropertyRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/hotels")
-public class HotelController {
+public class PropertyController {
 
-    private final HotelRepository hotelRepository;
+    private final PropertyRepository hotelRepository;
 
-    public HotelController(HotelRepository hotelRepository) {
+    public PropertyController(PropertyRepository hotelRepository) {
         this.hotelRepository = hotelRepository;
     }
 
     // Bütün otelləri görmək üçün GET sorğusu
     @GetMapping
-    public List<Hotel> getAllHotels() {
+    public List<Property> getAllHotels() {
         return hotelRepository.findAll();
     }
 
     // Sistemə yeni otel əlavə etmək üçün POST sorğusu
     @PostMapping
-    public Hotel addHotel(@RequestBody Hotel hotel) {
+    public Property addHotel(@RequestBody Property hotel) {
         return hotelRepository.save(hotel);
     }
 }

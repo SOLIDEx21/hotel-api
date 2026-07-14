@@ -13,7 +13,7 @@ public class Room {
 
     @ManyToOne
     @JoinColumn(name = "hotel_id", referencedColumnName = "id", nullable = false)
-    private Hotel hotel;
+    private Property hotel;
 
     @Column(name = "room_type", nullable = false)
     private String roomType;
@@ -29,8 +29,8 @@ public class Room {
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
-    public Hotel getHotel() { return hotel; }
-    public void setHotel(Hotel hotel) { this.hotel = hotel; }
+    public Property getHotel() { return hotel; }
+    public void setHotel(Property hotel) { this.hotel = hotel; }
 
     public String getRoomType() { return roomType; }
     public void setRoomType(String roomType) { this.roomType = roomType; }
