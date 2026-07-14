@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface RoomRepository extends JpaRepository<Room, Long> {
     // Müəyyən bir otelə aid olan bütün otaqları tapmaq üçün
-    List<Room> findByHotelId(Long hotelId);
+    List<Room> findByPropertyId(Long propertyId);
 }
